@@ -1,23 +1,10 @@
 {
   "name": "Kurozamenshi Website Destroyer",
   "short_name": "Kurozamenshi Destroyer",
-  "description": "Offline-capable personal build of the Destroy Any Website client.",
   "start_url": "./",
   "scope": "./",
-  "display": "fullscreen",
-  "orientation": "landscape",
+  "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#272727",
-  "icons": [
-    {
-      "src": "./assets/site/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "./assets/site/favicon.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    }
-  ]
+  "description": "Kurozamenshi offline edition of a browser destruction game."
 }

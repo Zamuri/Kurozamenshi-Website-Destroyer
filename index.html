@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Kurozamenshi Website Destroyer</title>
-    <meta name="description" content="Type any website's address and fight your way through it: its text, images and boxes become a destructible pixel-art level. Play solo or with friends. Free, in your browser." />
+    <meta name="description" content="Turn websites and local HTML into destructible pixel-art levels. Online pages are cached for offline replay." />
     <meta name="theme-color" content="#272727" />
-<link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="./_app/favicon-jqv269pb.ico" />
+        <link rel="canonical" href="https://destroy.spritefusion.com/" />
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="./_app/favicon-jqv269pb.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="./_app/favicon-16x16-4phv4t4f.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./_app/favicon-32x32-ehn2ggpe.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="./_app/favicon-n9zy1r36.png" />
@@ -1726,6 +1727,7 @@
         text-align: right;
       }
     </style>
+  <script src="./offline-bootstrap.js"></script>
   <script type="module" crossorigin src="./_app/index-3j3x5w5n.js"></script></head>
   <body>
     <div class="app">
@@ -1733,7 +1735,7 @@
         <header class="window-head">
           <div class="head-left">
             <h1 class="head-title">
-              <span class="name">Destroy Any Website</span>
+              <span class="name">Kurozamenshi Website Destroyer</span>
               <span class="by">made with</span>
               <a href="https://www.spritefusion.com/pixel-art-generator" target="_blank" rel="noopener noreferrer">Sprite Fusion</a>
             </h1>
@@ -1762,9 +1764,9 @@
                 </div>
                 <div class="title-row">
                   <div class="sfwin title-card">
-                    <div class="window-head"><p>Sprite Fusion Presents</p></div>
+                    <div class="window-head"><p>Kurozamenshi Presents</p></div>
                     <div class="sfwin-body">
-                      <h1 class="hero-title">Destroy Any Website</h1>
+                      <h1 class="hero-title">Kurozamenshi Website Destroyer</h1>
                       <p class="muted">Type an address, break everything.</p>
                       <form id="urlform" class="url-row" autocomplete="off">
                         <label class="input-wrap">
@@ -1815,10 +1817,10 @@
 
               <section id="mobile" class="screen hidden">
                 <div class="sfwin title-card">
-                  <div class="window-head"><p>Sprite Fusion Presents</p></div>
+                  <div class="window-head"><p>Kurozamenshi Presents</p></div>
                   <div class="sfwin-body mobile-body">
                     <img class="mobile-icon" src="./_app/monitorIcon-tkqvd2hx.svg" alt="" width="48" height="48" />
-                    <h1 class="hero-title">Destroy Any Website</h1>
+                    <h1 class="hero-title">Kurozamenshi Website Destroyer</h1>
                     <p class="muted">Make the window wider to play, or open it on a bigger screen!</p>
                     <img class="mobile-hero" src="./_app/og-rz7phhgb.png" alt="The stickman shooting the title of Wikipedia's Stick figure article to pieces" width="1200" height="630" loading="lazy" />
                     <button class="btn shine" type="button" id="mobile-copy"><span><p>Copy link for later</p></span></button>
@@ -2063,7 +2065,7 @@
                       <div class="inner pack-promo-body"><div class="pack-promo-skins"></div><div class="pack-promo-buy"></div></div>
                     </div>
                     <div class="made-on pack-alt">
-                      <p class="gray">Made on <a href="https://www.spritefusion.com/pixel-art-generator" data-link="made on" target="_blank" rel="noopener noreferrer">Sprite Fusion</a></p>
+                      <p class="gray">Kurozamenshi Website Destroyer</p>
                       <div class="inner art-strip"></div>
                     </div>
                     <div>
@@ -2107,7 +2109,7 @@
                       <div class="inner pack-promo-body"><div class="pack-promo-skins"></div><div class="pack-promo-buy"></div></div>
                     </div>
                     <div class="made-on pack-alt">
-                      <p class="gray">Made on <a href="https://www.spritefusion.com/pixel-art-generator" data-link="made on" target="_blank" rel="noopener noreferrer">Sprite Fusion</a></p>
+                      <p class="gray">Kurozamenshi Website Destroyer</p>
                       <div class="inner art-strip"></div>
                     </div>
                     <div class="row">
@@ -2152,7 +2154,7 @@
                       <p class="gray pack-promo-name">Halloween Skin Pack</p>
                       <div class="inner pack-promo-body"><div class="pack-promo-skins"></div><div class="pack-promo-buy"></div></div>
                     </div>
-                    <div class="made-on pack-alt"><p class="gray">Made on <a href="https://www.spritefusion.com/pixel-art-generator" data-link="made on" target="_blank" rel="noopener noreferrer">Sprite Fusion</a></p></div>
+                    <div class="made-on pack-alt"><p class="gray">Kurozamenshi Website Destroyer</p></div>
                   </div>
                 </div>
               </section>
@@ -2166,14 +2168,5 @@
       <p id="rotate-msg">Turn your phone sideways to play</p>
     </div>
     
-  
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(() => {});
-    });
-  }
-</script>
-
   </body>
 </html>
