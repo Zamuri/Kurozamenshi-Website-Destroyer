@@ -1,0 +1,79 @@
+{
+  "note": "Hand-placed anchors for assets/sprites/*.png, in file pixels. Weapons: grip = top of the handle, 2 px under the body; fore = foregrip, pump, magazine or tank top (if any); muzzle = end of the bore; eject = ejection port (if any). bomblet.tail makes the warhead a mini rocket flown nose first, exhaust at the tail. parachute.cords: where the cords meet. jetpack: strap pivot on the back and the two nozzles. drone (a 4-frame sheet, propellers spinning): pivot at the body's centre, mount under the belly where the gatling hangs, the two rotor hubs, the camera eye. gatling (a 4-frame sheet, its drum spinning): pivot at the drum's centre (it turns like a ball turret under the belly), muzzle, casing ejection. remote: the two hands and the antenna tip (muzzle). neutron: the Void gun's sprite (feat-bh), the seed leaves the muzzle. wand: the fist where its handle meets the rod (grip), the spell leaves its star (muzzle).",
+  "weapons": {
+    "pistol": {
+      "grip": [3, 12],
+      "muzzle": [20, 6],
+      "eject": [10, 3]
+    },
+    "smg": {
+      "grip": [11, 17],
+      "fore": [18, 17],
+      "muzzle": [27, 12],
+      "eject": [15, 9]
+    },
+    "shotgun": {
+      "grip": [9, 21],
+      "fore": [28, 20],
+      "muzzle": [38, 16],
+      "eject": [16, 14]
+    },
+    "launcher": {
+      "grip": [13, 23],
+      "fore": [24, 20],
+      "muzzle": [36, 16]
+    },
+    "railgun": {
+      "grip": [7, 20],
+      "fore": [20, 18],
+      "muzzle": [33, 13]
+    },
+    "flamethrower": {
+      "grip": [4, 18],
+      "fore": [17, 17],
+      "muzzle": [33, 12]
+    },
+    "remote": {
+      "grip": [4, 12],
+      "fore": [11, 12],
+      "muzzle": [11, 1]
+    },
+    "overkill": {
+      "grip": [15, 29],
+      "fore": [25, 29],
+      "muzzle": [47, 20]
+    },
+    "neutron": {
+      "grip": [12, 26],
+      "fore": [26, 25],
+      "muzzle": [40, 19]
+    },
+    "wand": {
+      "grip": [8, 3],
+      "muzzle": [21, 3]
+    }
+  },
+  "bomblet": {
+    "tail": [0, 10]
+  },
+  "parachute": {
+    "cords": [15, 26]
+  },
+  "jetpack": {
+    "pivot": [9, 7],
+    "nozzles": [[4.5, 17], [12.5, 17]]
+  },
+  "drone": {
+    "frames": 4,
+    "pivot": [23, 21],
+    "mount": [23, 27],
+    "rotors": [[8, 15], [39, 15]],
+    "eye": [41, 22]
+  },
+  "gatling": {
+    "frames": 4,
+    "pivot": [5, 12],
+    "muzzle": [22, 12],
+    "eject": [9, 17]
+  }
+}

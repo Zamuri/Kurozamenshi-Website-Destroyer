@@ -1,0 +1,15 @@
+{
+  "name": "Destroy Any Website",
+  "short_name": "Destroy",
+  "description": "Type any website's address and fight your way through it.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#000000",
+  "theme_color": "#272727",
+  "icons": [
+    { "src": "/assets/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/site/favicon.png", "sizes": "96x96", "type": "image/png" }
+  ]
+}

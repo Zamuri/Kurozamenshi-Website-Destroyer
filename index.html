@@ -1,0 +1,2179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Kurozamenshi Website Destroyer</title>
+    <meta name="description" content="Type any website's address and fight your way through it: its text, images and boxes become a destructible pixel-art level. Play solo or with friends. Free, in your browser." />
+    <meta name="theme-color" content="#272727" />
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="./_app/favicon-jqv269pb.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./_app/favicon-16x16-4phv4t4f.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./_app/favicon-32x32-ehn2ggpe.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./_app/favicon-n9zy1r36.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./_app/apple-touch-icon-b67mbd2s.png" />
+        <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Destroy" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sprite Fusion" />
+    <meta property="og:title" content="Destroy Any Website" />
+    <meta property="og:description" content="Type an address, break everything. Any website becomes a destructible pixel-art level, solo or with friends." />
+    <meta property="og:url" content="https://destroy.spritefusion.com/" />
+    <meta property="og:image" content="https://destroy.spritefusion.com/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A pixel-art stickman shredding the title of the Wikipedia article &quot;Stick figure&quot; with an SMG." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@HugoDuprez" />
+    <meta name="twitter:creator" content="@HugoDuprez" />
+    <meta name="twitter:title" content="Destroy Any Website" />
+    <meta name="twitter:description" content="Type an address, break everything. Any website becomes a destructible pixel-art level, solo or with friends." />
+    <meta name="twitter:image" content="https://destroy.spritefusion.com/og.png" />
+    <meta name="twitter:image:alt" content="A pixel-art stickman shredding the title of the Wikipedia article &quot;Stick figure&quot; with an SMG." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Destroy Any Website",
+        "url": "https://destroy.spritefusion.com/",
+        "image": "https://destroy.spritefusion.com/og.png",
+        "description": "Type any website's address and fight your way through it: its text, images and boxes become a destructible pixel-art level. Play solo or with friends.",
+        "genre": ["Action", "Shooter", "Platformer"],
+        "gamePlatform": "Web browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "playMode": ["SinglePlayer", "MultiPlayer"],
+        "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 6 },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "Sprite Fusion", "url": "https://www.spritefusion.com" }
+      }
+    </script>
+    <style>
+      
+      @font-face {
+        font-family: "chevyray";
+        src: url("/assets/fonts/chevyray.ttf");
+        font-display: block;
+      }
+      @font-face {
+        font-family: "chevyray-oeuf";
+        src: url("/assets/fonts/chevyray-oeuf.ttf");
+        font-display: block;
+      }
+      :root {
+        --white: #ededed;
+        --light-gray: #5b5b5b;
+        --medium-gray: #474747;
+        --black: #272727;
+        --pure-black: #000000;
+        --blue: #556ad9;
+        --orange: #f97316; 
+        --orange-error: #fb923c; 
+        --track-height: 8px; 
+        --thumb-height: 24px;
+        --thumb-width: 16px;
+        --shadow-button: 0px 2px 0px 0px #5b5b5b inset, 0px -2px 0px 0px #5b5b5b inset, -2px 0px 0px 0px #5b5b5b inset,
+          2px 0px 0px 0px #5b5b5b inset, 0px 2px 0px 0px #1e1e1e, 2px 0px 0px 0px #191919, -2px 0px 0px 0px #191919,
+          0px -2px 0px 0px #191919, 0px 4px 0px 0px rgba(25, 25, 25, 0.8);
+        --shadow-window-body: 4px 6px 0px 0px rgba(30, 30, 30, 0.2), -2px 0px 0px 0px #1e1e1e, 2px 0px 0px 0px #1e1e1e,
+          0px -2px 0px 0px #1e1e1e, 0px 2px 0px 0px #1e1e1e, 0px 4px 0px 0px #1e1e1e, 0px -2px 0px 0px #5b5b5b inset,
+          0px 2px 0px 0px #5b5b5b inset, -2px 0px 0px 0px #5b5b5b inset, 2px 0px 0px 0px #5b5b5b inset;
+        --shadow-window-head: 0px 2px 0px 0px #5b5b5b inset, -2px 0px 0px 0px #5b5b5b inset, 2px 0px 0px 0px #5b5b5b inset;
+        --shadow-input: -2px 0px 0px 0px #1e1e1e, 2px 0px 0px 0px #1e1e1e, 0px -2px 0px 0px #1e1e1e, 0px 2px 0px 0px #1e1e1e;
+        --shadow-inner-pannel: -2px 0px 0px 0px #0f0f0f, 2px 0px 0px 0px #0f0f0f, 0px -2px 0px 0px #0f0f0f, 0px 2px 0px 0px #0f0f0f,
+          0px -2px 0px 0px #1e1e1e inset, 0px 2px 0px 0px #1e1e1e inset, -2px 0px 0px 0px #1e1e1e inset, 2px 0px 0px 0px #1e1e1e inset;
+        --shadow-blue: -2px 0px 0px 0px #191919, 2px 0px 0px 0px #191919, 0px -2px 0px 0px #191919, 0px 2px 0px 0px #191919,
+          -2px 0px 0px 0px #697bdd inset, 2px 0px 0px 0px #697bdd inset, 0px -2px 0px 0px #697bdd inset, 0px 2px 0px 0px #697bdd inset;
+      }
+      
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0 solid;
+      }
+      img,
+      svg,
+      canvas {
+        display: block;
+      }
+      button,
+      input {
+        font: inherit;
+        color: inherit;
+        background: transparent;
+        letter-spacing: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: chevyray, ui-monospace, monospace;
+        font-size: 16px;
+        line-height: 20.48px;
+        color: var(--white);
+        background: var(--pure-black);
+        overflow: hidden;
+        user-select: none;
+      }
+      
+      p {
+        padding-top: 4px;
+      }
+
+      
+      .app {
+        height: 100%;
+        display: flex;
+      }
+      .window {
+        flex: 1;
+        min-width: 0;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--black);
+        box-shadow: var(--shadow-window-body);
+      }
+      .window-head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 6px 8px;
+        background: var(--medium-gray);
+        box-shadow: var(--shadow-window-head);
+      }
+      .window-body {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        padding: 6px;
+      }
+      .head-left,
+      .head-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+      }
+      .head-title {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        font-weight: normal;
+        font-size: 16px;
+      }
+      .head-title .name {
+        font-family: chevyray-oeuf, chevyray, monospace;
+        font-size: 24px;
+        line-height: 1;
+        
+        position: relative;
+        top: 2px;
+      }
+      .head-title .by {
+        color: #a0a0a0;
+      }
+      .head-title a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+      }
+      .head-title a:hover {
+        color: #ffffff;
+      }
+
+      
+      .btn {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 8px;
+        background: var(--medium-gray);
+        box-shadow: var(--shadow-button);
+      }
+      .btn:hover {
+        background: var(--light-gray);
+      }
+      .btn:focus {
+        outline: none;
+      }
+      .btn > span {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .btn img {
+        width: 20px;
+        height: 20px;
+        image-rendering: pixelated;
+      }
+      a.btn {
+        color: inherit;
+        text-decoration: none;
+      }
+      .btn img.discord {
+        width: 20px;
+        height: 15px; 
+      }
+      
+      .tag {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 8px;
+        font-size: 14px;
+        box-shadow: var(--shadow-input);
+      }
+      .tag:hover {
+        background: var(--medium-gray);
+      }
+      .tag > span {
+        margin-top: 3px;
+      }
+
+      
+      .stage {
+        position: relative;
+        flex: 1;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-inner-pannel);
+      }
+      #game {
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        image-rendering: pixelated;
+      }
+      
+      .stage.playing:not(.waiting),
+      .stage.playing:not(.waiting) * {
+        cursor: none !important;
+      }
+      #ui {
+        position: absolute;
+        inset: 2px;
+        pointer-events: none;
+      }
+      
+      .title-video {
+        position: absolute;
+        inset: 2px;
+        pointer-events: none;
+        opacity: 0;
+      }
+      .title-video.on {
+        opacity: 1;
+      }
+      .title-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .title-video::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(39, 39, 39, 0.4);
+      }
+      .screen {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.15s ease;
+      }
+      .screen.hidden,
+      .hidden {
+        opacity: 0;
+        pointer-events: none !important;
+      }
+      .screen.hidden * {
+        pointer-events: none !important;
+      }
+      
+      .more-link {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        color: var(--white);
+      }
+      
+      .join-link {
+        margin-left: 0;
+        gap: 6px;
+        align-items: baseline; 
+      }
+      .join-link img.discord {
+        width: 18px;
+        height: 13.5px; 
+        position: relative;
+        top: 3px; 
+      }
+      body.touch #title .keys-row {
+        justify-content: space-between;
+      }
+      .more-link p {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+      }
+      
+      .made-on {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .made-on a {
+        color: var(--white);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 2px;
+      }
+      .art-strip {
+        display: flex;
+        align-items: flex-start; 
+        justify-content: space-evenly;
+      }
+      .art-strip canvas {
+        image-rendering: pixelated;
+      }
+      
+      .pack-promo {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        container-type: inline-size;
+      }
+      .pack-promo-body {
+        align-self: flex-start; 
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .pack-promo-buy .btn {
+        width: 100%;
+        max-width: none;
+        padding: 6px 12px;
+      }
+      
+      #pause .gray,
+      #complete .gray,
+      #vs-over .gray {
+        color: #a0a0a0;
+      }
+      .menu-card [hidden] {
+        display: none !important;
+      }
+      .more-link:hover {
+        color: #ffffff;
+      }
+      .overlay {
+        background: rgba(0, 0, 0, 0.55);
+      }
+
+      
+      .sfwin {
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        background: var(--black);
+        box-shadow: var(--shadow-window-body);
+      }
+      .sfwin > .window-head {
+        gap: 16px;
+      }
+      .sfwin > .window-head button img {
+        width: 20px;
+        height: 20px;
+      }
+      .sfwin-body {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+      }
+      .gray {
+        color: var(--light-gray);
+      }
+      .muted {
+        color: #a0a0a0;
+      }
+      
+      .legal {
+        font-size: 12px;
+        color: #a0a0a0;
+      }
+      .legal a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .legal a:hover {
+        color: #ffffff;
+      }
+      
+      .home-legal {
+        margin-top: 16px;
+        text-align: center;
+      }
+
+      
+      .title-card {
+        width: min(620px, calc(100% - 32px));
+      }
+      
+      .title-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+      }
+      .featured-card {
+        width: 280px;
+      }
+      .featured-card[hidden] {
+        display: none;
+      }
+      .featured-card .window-head p {
+        overflow-wrap: anywhere; 
+      }
+      .featured-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: var(--shadow-inner-pannel);
+      }
+      
+      #title {
+        container-type: inline-size;
+      }
+      @container (min-width: 1212px) {
+        .title-row {
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+        }
+        .title-row > .title-card {
+          grid-column: 2;
+          width: 620px;
+        }
+        #title .title-row > .featured-card {
+          grid-column: 3;
+          justify-self: start;
+          width: 280px;
+        }
+      }
+      .hero-title {
+        font-family: chevyray-oeuf, chevyray, monospace;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 1.1;
+      }
+      .url-row {
+        display: flex;
+        gap: 8px;
+      }
+      
+      .input-wrap .proto.label {
+        margin-right: 8px;
+      }
+      .input-wrap {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        
+        padding: 4px 8px 6px;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-input);
+        cursor: text;
+      }
+      .input-wrap:focus-within {
+        box-shadow: var(--shadow-blue);
+      }
+      .input-wrap .proto {
+        color: var(--light-gray);
+        padding-top: 4px;
+      }
+      .input-wrap input {
+        flex: 1;
+        min-width: 0;
+        outline: none;
+        padding-top: 4px;
+      }
+      .input-wrap input::placeholder {
+        color: var(--light-gray);
+      }
+      
+      .picks {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .picks.col {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .picks.col > p {
+        color: #a0a0a0;
+      }
+      .picks.col > .url-row {
+        align-self: stretch;
+      }
+      .pick-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+      }
+      .picks > p {
+        color: #a0a0a0; 
+      }
+      .err {
+        color: var(--orange-error);
+      }
+      
+      .err:empty {
+        display: none;
+      }
+      #title .err {
+        display: block;
+        min-height: 24px;
+      }
+      .keys-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 16px;
+        color: #a0a0a0;
+      }
+      .keys-row > span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .keys-row img {
+        height: 17px;
+        width: auto;
+        image-rendering: pixelated;
+      }
+      kbd {
+        font: inherit;
+        font-size: 14px;
+        color: var(--white);
+        background: var(--medium-gray);
+        padding: 2px 5px 0;
+        box-shadow: var(--shadow-input);
+      }
+
+      
+      .load-card {
+        width: min(420px, calc(100% - 32px));
+      }
+      .load-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .load-bar {
+        position: relative;
+        display: flex;
+        height: 12px;
+        width: 100%;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-input);
+      }
+      .load-bar i {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 12px;
+        width: 0;
+        background: var(--orange);
+        transition: width 0.25s linear;
+      }
+
+      
+      #hud {
+        position: absolute;
+        inset: 0;
+        transition: opacity 0.15s ease;
+      }
+      .hud-tl {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        width: 260px;
+      }
+      .hud-tl .window-head p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .hud-tl .sfwin-body {
+        padding: 8px;
+        gap: 0;
+      }
+      
+      .hud-progress {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        width: 256px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        background: var(--medium-gray);
+        box-shadow: var(--shadow-window-body);
+      }
+      .hud-progress .meter {
+        flex: 1;
+      }
+      .hud-progress p {
+        min-width: 40px; 
+        text-align: right;
+      }
+      .meter-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+      .meter {
+        position: relative;
+        display: flex;
+        height: 12px;
+        width: 100%;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-input);
+      }
+      .meter i,
+      .meter b {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 12px;
+        width: 0;
+      }
+      .meter b {
+        background: var(--white);
+        opacity: 0.85;
+      }
+      .meter i {
+        background: var(--orange);
+      }
+      .hud-weapons {
+        position: absolute;
+        left: 50%;
+        bottom: 12px;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        padding: 8px;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-inner-pannel);
+      }
+      .slot {
+        position: relative;
+        width: 76px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--black);
+        box-shadow: var(--shadow-button);
+      }
+      .slot.on {
+        background: var(--medium-gray);
+      }
+      .slot canvas {
+        image-rendering: pixelated;
+      }
+      .slot .key {
+        position: absolute;
+        left: 6px;
+        top: 3px;
+        font-size: 14px;
+        color: var(--light-gray);
+      }
+      .slot.on .key {
+        color: var(--white);
+      }
+      .slot.alt {
+        width: 60px;
+      }
+      .wname {
+        position: absolute;
+        left: 50%;
+        bottom: 92px;
+        transform: translateX(-50%);
+        padding: 6px 8px;
+        background: var(--black);
+        box-shadow: var(--shadow-input);
+        white-space: nowrap;
+        transition: opacity 0.15s ease;
+      }
+      .hud-hint {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        max-width: 380px;
+        transition: opacity 0.15s ease;
+      }
+      
+      .slot .charge {
+        position: absolute;
+        left: 6px;
+        right: 6px;
+        bottom: 4px;
+        height: 3px;
+        background: var(--black);
+        box-shadow: var(--shadow-input);
+        opacity: 0;
+        transition: opacity 0.15s ease;
+      }
+      .slot .charge i {
+        display: block;
+        height: 100%;
+        background: var(--white);
+      }
+      .slot .charge.on {
+        opacity: 1;
+      }
+      .hud-hint .sfwin-body {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+      
+      .menu-card {
+        width: min(500px, calc(100% - 32px));
+      }
+      .menu-card .row {
+        display: flex;
+        gap: 8px;
+      }
+      .menu-card .row .btn {
+        flex: 1;
+      }
+      
+      .slot.off {
+        display: none;
+      }
+      .inner {
+        padding: 8px;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-inner-pannel);
+      }
+      .keys {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 6px 16px;
+        color: #a0a0a0;
+      }
+      .keys > p:nth-child(odd) {
+        color: var(--white);
+      }
+      .seg {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .seg .btn {
+        flex: 1 0 auto;
+        background: var(--black);
+      }
+      .seg .btn.on,
+      .seg .btn:hover {
+        background: var(--medium-gray);
+      }
+      
+      input[type="range"] {
+        appearance: none;
+        background: transparent;
+        width: 100%;
+        cursor: pointer;
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        background: var(--medium-gray);
+        height: var(--track-height);
+        box-shadow: var(--shadow-button);
+      }
+      input[type="range"]::-moz-range-track {
+        background: var(--medium-gray);
+        height: var(--track-height);
+        box-shadow: var(--shadow-button);
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        background: var(--medium-gray);
+        width: var(--thumb-width);
+        height: var(--thumb-height);
+        margin-top: calc((var(--track-height) / 2) - (var(--thumb-height) / 2));
+        box-shadow: var(--shadow-button);
+      }
+      input[type="range"]::-moz-range-thumb {
+        appearance: none;
+        background: var(--medium-gray);
+        width: var(--thumb-width);
+        height: var(--thumb-height);
+        border: 3px solid var(--light-gray);
+        border-radius: 0;
+        box-shadow: var(--shadow-button);
+      }
+      input[type="range"]:focus {
+        outline: none;
+      }
+      .sfx-vol {
+        display: block;
+        height: var(--thumb-height); 
+        margin-top: 8px;
+      }
+      .big-score {
+        font-family: chevyray-oeuf, chevyray, monospace;
+        font-size: 96px;
+        line-height: 1;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 6px 16px;
+        color: #a0a0a0;
+      }
+      .stats .v {
+        color: var(--white);
+        text-align: right;
+      }
+      
+      #ui.versus .sp-only,
+      #ui:not(.versus) .vs-only {
+        display: none !important;
+      }
+      .code-row {
+        display: flex;
+        gap: 8px;
+      }
+      .input-wrap.code {
+        flex: none;
+        width: 132px;
+      }
+      .input-wrap.code input {
+        text-transform: uppercase;
+      }
+      .input-wrap.code input::placeholder {
+        text-transform: none;
+      }
+      
+      
+      #mobile.hidden {
+        display: none; 
+      }
+      .mobile-body {
+        align-items: center;
+        text-align: center;
+      }
+      .mobile-icon {
+        image-rendering: pixelated;
+      }
+      .mobile-body .hero-title {
+        font-size: 32px;
+      }
+      .mobile-hero {
+        width: 100%;
+        max-width: 512px;
+        height: auto;
+        box-shadow: var(--shadow-inner-pannel);
+      }
+      .btn.shine {
+        width: 100%;
+        max-width: 512px;
+        padding: 6px 64px;
+        font-family: chevyray-oeuf, chevyray, monospace;
+        background: linear-gradient(110deg, #000, 45%, #cbcbcb, 55%, #000);
+        background-size: 220% 100%;
+        animation: background-shine 2.5s linear infinite;
+      }
+      @keyframes background-shine {
+        from {
+          background-position: -20% 0;
+        }
+        to {
+          background-position: -200% 0;
+        }
+      }
+
+      
+      .mobile .head-title .by,
+      .mobile .head-title a,
+      .mobile #btn-share,
+      .mobile #btn-mp {
+        display: none !important; 
+      }
+      @media (max-width: 640px) {
+        .head-title .name {
+          font-size: 18px;
+        }
+        #btn-discord p {
+          display: none;
+        }
+      }
+
+      
+      body:not(.touch) .touch-only,
+      body.touch .kb-only {
+        display: none !important;
+      }
+      body.touch {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+      }
+      body.touch button,
+      body.touch a {
+        touch-action: manipulation; 
+      }
+      
+      body.touch .app {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      }
+      body.touch .window > .window-head {
+        display: none;
+      }
+      body.touch .window-body {
+        padding: 0;
+      }
+      
+      body.touch .stage.playing {
+        touch-action: none;
+      }
+      
+      body.touch .screen {
+        justify-content: flex-start;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 8px 0;
+      }
+      
+      body.touch #title,
+      body.touch #mp,
+      body.touch #lobby,
+      body.touch #loading {
+        padding-top: 76px;
+      }
+      body.touch .screen:not(.hidden) {
+        pointer-events: auto;
+      }
+      
+      body:not(.ios-safari) .ios-only {
+        display: none !important;
+      }
+      body.touch .screen > .sfwin,
+      body.touch .screen > .title-row {
+        flex-shrink: 0;
+        margin: auto 0;
+      }
+      body.touch .featured-card {
+        width: min(620px, calc(100% - 32px));
+      }
+      body.touch .sfwin-body {
+        gap: 10px;
+        padding: 12px;
+      }
+      body.touch .hero-title {
+        font-size: 30px;
+      }
+      body.touch .big-score {
+        font-size: 60px;
+      }
+      
+      body.touch #hud .sfwin,
+      #hud.hidden * {
+        pointer-events: none !important;
+      }
+      body.touch .hud-tl {
+        left: 8px;
+        top: 8px;
+        width: 200px;
+      }
+      body.touch .hud-tl .window-head {
+        padding: 4px 8px;
+      }
+      body.touch .hud-tl .sfwin-body {
+        padding: 6px 8px;
+      }
+      
+      body.touch #hud-progress {
+        left: 8px;
+        top: 8px;
+        width: 150px;
+        gap: 6px;
+        padding: 3px 6px;
+        background: rgba(0, 0, 0, 0.35);
+        box-shadow: none;
+      }
+      body.touch #hud-progress p {
+        min-width: 0;
+        font-size: 13px;
+        line-height: 14px;
+      }
+      body.touch #hud-progress .meter {
+        flex: 1;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.15);
+      }
+      body.touch #hud-progress .meter,
+      body.touch #hud-progress .meter i,
+      body.touch #hud-progress .meter b {
+        height: 4px;
+      }
+      body.touch .hud-weapons {
+        bottom: 6px;
+        gap: 4px;
+        padding: 4px;
+        background: none; 
+        box-shadow: none;
+        pointer-events: auto;
+      }
+      body.touch .slot {
+        width: 50px; 
+        height: 34px;
+      }
+      body.touch .slot .key,
+      body.touch .slot.alt {
+        display: none;
+      }
+      
+      body.touch .wname {
+        bottom: 52px;
+        padding: 3px 6px;
+        font-size: 12px;
+      }
+      body.touch .hud-hint {
+        left: 50%;
+        top: 8px;
+        bottom: auto;
+        transform: translateX(-50%);
+        width: max-content;
+        max-width: calc(100% - 440px);
+        font-size: 14px;
+      }
+      body.touch .hud-hint .sfwin-body {
+        padding: 6px 10px;
+      }
+      body.touch .vs-feed {
+        top: 40px;
+        right: 6px;
+      }
+      
+      body.touch.portrait .hud-weapons {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: max-content;
+        max-width: calc(100% - 120px);
+      }
+      body.touch.portrait .slot {
+        width: 48px;
+      }
+      body.touch.portrait .tstick {
+        top: calc(100% - 190px);
+      }
+      body.touch.portrait .hud-hint {
+        top: 40px;
+        max-width: calc(100% - 24px);
+      }
+      
+      .tstick {
+        position: absolute;
+        left: 84px;
+        top: calc(100% - 84px);
+        width: 104px;
+        height: 104px;
+        margin: -52px 0 0 -52px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.35);
+        background: rgba(0, 0, 0, 0.18);
+        opacity: 0.45;
+        pointer-events: none;
+      }
+      .tstick.on {
+        opacity: 1;
+      }
+      .tstick i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 44px;
+        height: 44px;
+        margin: -22px 0 0 -22px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.55);
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.35);
+      }
+      
+      .tbtn {
+        position: absolute;
+        pointer-events: auto;
+        touch-action: none;
+      }
+      .tbtn-alt {
+        right: 10px;
+        bottom: 10px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        flex-direction: column;
+        gap: 0;
+      }
+      
+      .tbtn-alt canvas {
+        width: 32px;
+        height: 32px;
+        image-rendering: pixelated;
+      }
+      .tbtn-alt.dive canvas {
+        width: 16px;
+        height: 16px;
+      }
+      .tbtn-alt p {
+        display: none;
+        font-size: 12px;
+        line-height: 12px;
+      }
+      .tbtn-alt.dive p {
+        display: block;
+      }
+      .tbtn-pause {
+        right: 6px;
+        top: 6px;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        gap: 4px;
+      }
+      .tbtn-pause i {
+        width: 4px;
+        height: 10px;
+        background: var(--white);
+      }
+      
+      .rotate {
+        display: none;
+      }
+      body.touch.turn .rotate {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: 24px;
+        text-align: center;
+        background: var(--black);
+      }
+      .rotate img {
+        image-rendering: pixelated;
+      }
+
+      
+      .badge-preview {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background: #1e1e1e;
+        box-shadow: var(--shadow-inner-pannel);
+      }
+      .badge-preview.light {
+        background: #ededed;
+      }
+      .badge-preview img:not(.on) {
+        display: none;
+      }
+      #badge .seg {
+        margin-top: 0;
+      }
+      .badge-code {
+        margin: 0;
+        font: 14px/20px chevyray, ui-monospace, monospace;
+        color: #a0a0a0;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere; 
+        user-select: text;
+      }
+      .link-box {
+        flex: 1;
+        min-width: 0;
+        padding: 4px 8px 6px; 
+        background: var(--pure-black);
+        box-shadow: var(--shadow-input);
+        overflow: hidden;
+        user-select: text;
+      }
+      .link-box p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .players {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .pl {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        flex: none;
+        box-shadow: var(--shadow-input);
+      }
+      .pl .tag-me {
+        color: var(--light-gray);
+      }
+      .meter.hp i {
+        background: #7cff6b;
+      }
+      .meter.hp.low i {
+        background: #ff4d4d;
+      }
+      .vs-feed {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+      }
+      .vs-feed p {
+        padding: 4px 8px;
+        background: var(--black);
+        box-shadow: var(--shadow-input);
+        white-space: nowrap;
+      }
+      .vs-center {
+        position: absolute;
+        left: 50%;
+        top: 34%;
+        transform: translate(-50%, -50%);
+        font-family: chevyray-oeuf, chevyray, monospace;
+        font-size: 32px;
+        text-shadow: 0 3px 0 #000;
+        white-space: nowrap;
+        transition: opacity 0.15s ease;
+      }
+      .vs-board {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: min(440px, calc(100% - 32px));
+      }
+      .board {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 6px 16px;
+        align-items: center;
+        color: #a0a0a0;
+      }
+      .board .n {
+        color: var(--white);
+      }
+      
+      
+      .maps {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+        gap: 6px;
+        width: 100%;
+      }
+      .map-tile {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 4px 4px 6px;
+        box-shadow: var(--shadow-input);
+        text-align: left;
+      }
+      .map-tile:hover,
+      .map-tile:focus-visible {
+        background: var(--medium-gray);
+        outline: none;
+      }
+      .map-tile img,
+      .map-tile .any {
+        width: 100%;
+        height: 60px;
+        object-fit: cover;
+        object-position: top;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-inner-pannel);
+      }
+      .map-tile .any {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: chevyray-oeuf, chevyray, monospace;
+        font-size: 39px;
+        line-height: 1;
+        padding: 10px 0 0 4px;
+        color: var(--orange);
+      }
+      .map-tile p {
+        font-size: 14px;
+        line-height: 16px;
+      }
+      .map-tile.random {
+        background: var(--medium-gray);
+      }
+      .map-tile.random:hover {
+        background: var(--light-gray);
+      }
+      body.touch .map-tile img,
+      body.touch .map-tile .any {
+        height: 64px;
+      }
+      
+      
+      .skins-shelf {
+        width: min(620px, calc(100% - 32px));
+      }
+      #title {
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding: 24px 0;
+      }
+      #title > .skins-shelf {
+        flex-shrink: 0;
+        margin: auto 0 16px;
+      }
+      #title > .title-row {
+        flex-shrink: 0;
+        margin: 0 0 auto;
+      }
+      
+      body.touch #title > .title-row {
+        order: 1;
+        margin: auto 0 16px;
+      }
+      body.touch #title > .skins-shelf {
+        order: 2;
+        margin: 0 0 auto;
+      }
+      body.touch #title > .home-legal {
+        order: 3;
+      }
+      
+      .skins-shelf {
+        container-type: inline-size;
+      }
+      .skins-shelf > .sfwin-body {
+        flex-direction: row;
+        align-items: center;
+      }
+      .skins-shelf-skins {
+        flex: none;
+      }
+      
+      .skins-shelf-skins,
+      .pack-promo-skins {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 88px);
+        gap: 6px;
+      }
+      .skins-shelf-skins .skin-tile,
+      .pack-promo-skins .skin-tile {
+        padding: 0;
+        min-width: 0;
+      }
+      .skins-shelf-skins .skin-tile canvas,
+      .pack-promo-skins .skin-tile canvas {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+      
+      .skins-shelf-side {
+        flex: 1;
+        min-width: 0;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .skins-shelf-side .btn {
+        width: 100%;
+        max-width: none;
+        padding: 6px 12px;
+      }
+      @container (max-width: 560px) {
+        .skins-shelf > .sfwin-body {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .skins-shelf-skins {
+          justify-content: center;
+        }
+      }
+      #skins-actions:empty {
+        display: none;
+      }
+      
+      .text-link {
+        font-size: 14px;
+        line-height: 16px;
+        color: #a0a0a0;
+        text-align: left;
+      }
+      .text-link p {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .text-link:hover,
+      .text-link:focus-visible {
+        color: #ffffff;
+        outline: none;
+      }
+      
+      .window-head > .text-link {
+        margin-left: auto;
+      }
+      
+      .skins-top {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .skins-preview {
+        width: 150px;
+        height: 150px;
+        flex: none;
+        padding: 0;
+        background: var(--medium-gray);
+        image-rendering: pixelated;
+      }
+      .skins-about {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 8px;
+        min-width: 0;
+      }
+      .skins-name {
+        font-family: chevyray-oeuf, chevyray, monospace;
+        font-size: 26px;
+        line-height: 1.1;
+      }
+      
+      .skins-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+        gap: 6px;
+      }
+      
+      .skin-tile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        padding: 0 0 6px;
+        background: var(--medium-gray);
+        box-shadow: var(--shadow-input);
+      }
+      .skin-tile canvas {
+        display: block;
+        width: 88px;
+        height: 88px;
+        image-rendering: pixelated;
+      }
+      .skin-tile p {
+        font-size: 14px;
+        line-height: 16px;
+      }
+      button.skin-tile:hover,
+      button.skin-tile:focus-visible,
+      .skin-tile.on {
+        background: var(--light-gray);
+        outline: none;
+      }
+      
+      .skin-tile.worn {
+        box-shadow: -2px 0 0 0 var(--orange), 2px 0 0 0 var(--orange), 0 -2px 0 0 var(--orange), 0 2px 0 0 var(--orange);
+      }
+      .skin-tile.worn::after {
+        content: "Worn";
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 3px 1px 4px;
+        font-size: 11px;
+        line-height: 12px;
+        background: var(--orange);
+        color: var(--pure-black);
+        pointer-events: none;
+      }
+      body.touch .skins-preview {
+        width: 120px;
+        height: 120px;
+      }
+      
+      #party {
+        justify-content: center;
+      }
+      .party-card {
+        width: min(420px, calc(100% - 32px));
+      }
+      .party-body {
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+      }
+      .party-when {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .party-count {
+        font-family: chevyray-oeuf, chevyray, monospace;
+        font-size: 64px;
+        line-height: 1;
+      }
+      .party-count:empty {
+        display: none;
+      }
+      .party-status {
+        color: #a0a0a0;
+      }
+      
+      .party-find {
+        position: relative;
+        width: 160px;
+        height: 8px;
+        overflow: hidden;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-input);
+      }
+      .party-find i {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        background: var(--orange);
+        animation: party-find 1.2s linear infinite;
+      }
+      @keyframes party-find {
+        from {
+          transform: translateX(-40px);
+        }
+        to {
+          transform: translateX(160px);
+        }
+      }
+      
+      body.quick .tbtn-pause:not(.tbtn-leave),
+      body.quick .esc-key,
+      body:not(.quick) .tbtn-leave,
+      body:not(.quick) .esc-leave {
+        display: none !important;
+      }
+      .tbtn-leave img {
+        width: 12px;
+        height: 12px;
+      }
+      #leave-q {
+        justify-content: center;
+      }
+      .leave-card {
+        width: min(340px, calc(100% - 32px));
+      }
+      
+      .leave-body {
+        display: flex;
+        gap: 8px;
+      }
+      .leave-sound {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .leave-sound .sfx-vol {
+        flex: 1;
+        margin-top: 0;
+      }
+      .over-settings {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+      }
+      .over-sound {
+        flex: 1 1 140px;
+      }
+      .leave-body .btn {
+        flex: 1;
+      }
+      .leave-body #leave-no {
+        flex: 2;
+      }
+      
+      .lobby-waiting {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .lobby-waiting p {
+        color: #a0a0a0;
+      }
+      .lobby-waiting.hidden,
+      .lobby-alone.hidden {
+        display: none;
+      }
+      .party-online {
+        color: #a0a0a0;
+        font-size: 14px;
+      }
+      .party-online:empty {
+        display: none;
+      }
+      .party-who {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .party-n {
+        font-size: 22px;
+        line-height: 24px;
+      }
+      .party-players {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+      }
+      .party-players .chip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 2px 8px 4px;
+        background: var(--pure-black);
+        box-shadow: var(--shadow-input);
+      }
+      
+      #hud.party-hidden {
+        opacity: 0;
+      }
+      #hud.party-hidden * {
+        pointer-events: none !important;
+      }
+      
+      @media (max-height: 520px) {
+        .party-card {
+          width: min(560px, calc(100% - 32px));
+        }
+        .party-body {
+          flex-direction: row;
+          justify-content: center;
+          gap: 24px;
+        }
+        .party-count {
+          font-size: 48px;
+        }
+      }
+      .board .v {
+        color: var(--white);
+        text-align: right;
+      }
+    </style>
+  <script type="module" crossorigin src="./_app/index-3j3x5w5n.js"></script></head>
+  <body>
+    <div class="app">
+      <div class="window">
+        <header class="window-head">
+          <div class="head-left">
+            <h1 class="head-title">
+              <span class="name">Destroy Any Website</span>
+              <span class="by">made with</span>
+              <a href="https://www.spritefusion.com/pixel-art-generator" target="_blank" rel="noopener noreferrer">Sprite Fusion</a>
+            </h1>
+          </div>
+          <div class="head-right">
+            <button class="btn" type="button" id="btn-share"><span><p>Share</p></span></button>
+            <button class="btn" type="button" id="btn-mp" style="display: none"><span><p>Multiplayer</p></span></button>
+            <a class="btn" id="btn-discord" href="https://discord.gg/GtrvggBEmv" target="_blank" rel="noopener noreferrer"><span><img class="discord" src="./_app/discordIcon-j08ja80d.svg" alt="" /><p>Discord</p></span></a>
+          </div>
+        </header>
+        <div class="window-body">
+          <div class="stage" id="stage">
+            <canvas id="game"></canvas>
+                        <div id="title-video" class="title-video"><video muted loop playsinline preload="none" aria-hidden="true"></video></div>
+            <div id="ui">
+              <section id="title" class="screen">
+                                <div class="sfwin skins-shelf">
+                  <div class="window-head">
+                    <p id="skins-shelf-title">Halloween Skin Pack</p>
+                    <button type="button" class="text-link" id="skins-shelf-restore" hidden><p>Restore purchase</p></button>
+                  </div>
+                  <div class="sfwin-body">
+                    <div class="skins-shelf-skins" id="skins-shelf"></div>
+                    <div class="skins-shelf-side" id="skins-shelf-side"></div>
+                  </div>
+                </div>
+                <div class="title-row">
+                  <div class="sfwin title-card">
+                    <div class="window-head"><p>Sprite Fusion Presents</p></div>
+                    <div class="sfwin-body">
+                      <h1 class="hero-title">Destroy Any Website</h1>
+                      <p class="muted">Type an address, break everything.</p>
+                      <form id="urlform" class="url-row" autocomplete="off">
+                        <label class="input-wrap">
+                          <span class="proto">https://</span>
+                          <input id="url" name="url" spellcheck="false" placeholder="wikipedia.org" aria-label="Website address" />
+                        </label>
+                        <button class="btn" type="submit"><span><img src="./_app/boltIcon-v9dmn2sh.svg" alt="" /><p>Destroy</p></span></button>
+                      </form>
+                      <div class="picks">
+                        <p>Try</p>
+                        <div class="pick-row">
+                          <button class="tag pick" type="button" data-url="demo"><span>Demo page</span></button>
+                          <button class="tag pick" type="button" data-url="en.wikipedia.org/wiki/Stick_figure"><span>Wikipedia</span></button>
+                        </div>
+                      </div>
+                      <div class="picks col">
+                        <p>Multiplayer</p>
+                        <div class="pick-row">
+                          <button class="btn" type="button" id="mp-open"><span><img src="./_app/boltIcon-v9dmn2sh.svg" alt="" /><p>Play online</p></span></button>
+                        </div>
+                      </div>
+                      <div class="pick-row"><button class="tag embed-open" type="button"><span>Embed to your website</span></button></div>
+                      <p class="muted ios-only">Install on your phone: tap Share, then Add to Home Screen.</p>
+                      <p class="err" id="err"></p>
+                      <div class="keys-row">
+                        <span class="kb-only"><kbd>A</kbd><kbd>D</kbd><p>run</p></span>
+                        <span class="kb-only"><img src="./_app/spaceBarIcon-3zzb4qy0.svg" alt="Space" /><p>jump - hold to fly</p></span>
+                        <span class="kb-only"><img src="./_app/mouseLeftIcon-47ae7rmd.svg" alt="Left click" /><p>shoot</p></span>
+                        <span class="kb-only"><img src="./_app/mouseRightIcon-spccm0mv.svg" alt="Right click" /><p>grenade</p></span>
+                        <a class="more-link join-link touch-only" id="btn-join" href="https://discord.gg/GtrvggBEmv" target="_blank" rel="noopener noreferrer"><img class="discord" src="./_app/discordIcon-j08ja80d.svg" alt="" /><p>Join</p></a>
+                        <a class="more-link" data-link="more experiments" href="https://www.spritefusion.com/blog" target="_blank" rel="noopener noreferrer"><p>More experiments</p></a>
+                      </div>
+                      <p class="legal kb-only">Copyright 2026 Sprite Fusion. All rights reserved - <a href="mailto:contact@spritefusion.com">contact@spritefusion.com</a></p>
+                    </div>
+                  </div>
+                                    <div class="sfwin featured-card" id="featured" hidden>
+                    <div class="window-head"><p id="featured-title"></p></div>
+                    <div class="sfwin-body">
+                      <img class="featured-img" id="featured-img" alt="" />
+                      <p id="featured-line"></p>
+                      <button class="btn" type="button" id="featured-go"><span><p id="featured-go-label"></p></span></button>
+                      <p class="legal"><span id="featured-sponsored">Sponsored - </span><a id="featured-book" href="https://buy.stripe.com/4gM9AV5KD5B9c6I8GD1Fe09" target="_blank" rel="noopener noreferrer">Your site here</a></p>
+                    </div>
+                  </div>
+                </div>
+                                <p class="legal home-legal touch-only">Copyright 2026 Sprite Fusion. All rights reserved - <a href="mailto:contact@spritefusion.com">contact@spritefusion.com</a></p>
+              </section>
+
+              <section id="mobile" class="screen hidden">
+                <div class="sfwin title-card">
+                  <div class="window-head"><p>Sprite Fusion Presents</p></div>
+                  <div class="sfwin-body mobile-body">
+                    <img class="mobile-icon" src="./_app/monitorIcon-tkqvd2hx.svg" alt="" width="48" height="48" />
+                    <h1 class="hero-title">Destroy Any Website</h1>
+                    <p class="muted">Make the window wider to play, or open it on a bigger screen!</p>
+                    <img class="mobile-hero" src="./_app/og-rz7phhgb.png" alt="The stickman shooting the title of Wikipedia's Stick figure article to pieces" width="1200" height="630" loading="lazy" />
+                    <button class="btn shine" type="button" id="mobile-copy"><span><p>Copy link for later</p></span></button>
+                    <p class="legal">Copyright 2026 Sprite Fusion. All rights reserved - <a href="mailto:contact@spritefusion.com">contact@spritefusion.com</a></p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="badge" class="screen hidden">
+                <div class="sfwin title-card">
+                  <div class="window-head">
+                    <p>Embed to your website</p>
+                    <button type="button" id="badge-close" aria-label="Close"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+                  </div>
+                  <div class="sfwin-body">
+                    <p class="muted">Put it on your website to let your users smash your website. In the code, replace YOUR_WEBSITE_URL with your website's address.</p>
+                    <div class="badge-preview" id="badge-preview">
+                      <img data-look="dark" src="./_app/badge-s8jyv0vp.svg" alt="Destroy this website" width="180" height="40" />
+                      <img data-look="light" src="./_app/badge-light-cza4m21j.svg" alt="Destroy this website" width="180" height="40" />
+                    </div>
+                    <div class="seg" id="badge-seg">
+                      <button class="btn on" type="button" data-look="dark"><span><p>Dark</p></span></button>
+                      <button class="btn" type="button" data-look="light"><span><p>Light</p></span></button>
+                    </div>
+                    <pre class="inner badge-code" id="badge-code"></pre>
+                    <button class="btn" type="button" id="badge-copy"><span><p>Copy code</p></span></button>
+                  </div>
+                </div>
+              </section>
+
+                            <section id="skins" class="screen hidden">
+                <div class="sfwin title-card">
+                  <div class="window-head">
+                    <p>Skins</p>
+                    <button type="button" class="text-link" id="skins-restore" hidden><p>Restore purchase</p></button>
+                    <button type="button" id="skins-close" aria-label="Close"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+                  </div>
+                  <div class="sfwin-body">
+                    <div class="skins-top">
+                      <canvas id="skins-preview" class="skins-preview inner"></canvas>
+                      <div class="skins-about">
+                        <p class="skins-name" id="skins-name"></p>
+                        <p class="muted" id="skins-note"></p>
+                        <div class="pick-row" id="skins-actions"></div>
+                      </div>
+                    </div>
+                    <div class="skins-grid" id="skins-grid"></div>
+                    <p class="err" id="skins-err"></p>
+                  </div>
+                </div>
+              </section>
+
+                            <section id="mp" class="screen hidden">
+                <div class="sfwin title-card">
+                  <div class="window-head">
+                    <p>Multiplayer</p>
+                    <button type="button" id="mp-close" aria-label="Back"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+                  </div>
+                  <div class="sfwin-body">
+                    <div class="url-row">
+                      <label class="input-wrap"><span class="proto label">Name</span><input id="mp-name" maxlength="16" spellcheck="false" aria-label="Your name" /></label>
+                    </div>
+                    <div class="picks col">
+                      <p>Quick match</p>
+                      <div class="maps" id="mp-maps"></div>
+                      <p class="legal">maps by esch</p>
+                    </div>
+                    <div class="picks col">
+                      <p>With friends</p>
+                      <div class="pick-row">
+                        <button class="btn" type="button" id="vs-create"><span><p>Invite friends</p></span></button>
+                        <form id="vs-joinform" class="code-row" autocomplete="off">
+                          <label class="input-wrap code"><input id="vs-code" maxlength="6" spellcheck="false" placeholder="Room code" aria-label="Room code" /></label>
+                          <button class="btn" type="submit"><span><p>Join</p></span></button>
+                        </form>
+                      </div>
+                    </div>
+                    <p class="err" id="mp-err"></p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="lobby" class="screen hidden">
+                <div class="sfwin title-card">
+                  <div class="window-head">
+                    <p>Multiplayer - <span id="lobby-code"></span></p>
+                    <button type="button" data-act="leave" aria-label="Leave the room"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+                  </div>
+                  <div class="sfwin-body">
+                    <div class="url-row">
+                      <label class="input-wrap"><span class="proto label">Name</span><input id="lobby-name" maxlength="16" spellcheck="false" aria-label="Your name" /></label>
+                    </div>
+                    <div class="picks col">
+                      <p>Invite friends</p>
+                      <div class="url-row">
+                        <div class="link-box" aria-label="Invite link"><p id="lobby-link"></p></div>
+                        <button class="btn" type="button" id="lobby-copy"><span><p>Copy invite</p></span></button>
+                      </div>
+                                            <div class="lobby-waiting hidden" id="lobby-waiting"><div class="party-find"><i></i></div><p>Waiting for friends</p></div>
+                    </div>
+                    <div class="inner players" id="lobby-players"></div>
+                                        <div class="picks col lobby-alone hidden" id="lobby-alone">
+                      <p>Or play now</p>
+                      <div class="pick-row">
+                        <button class="btn" type="button" data-act="lobby-quick"><span><img src="./_app/boltIcon-v9dmn2sh.svg" alt="" /><p>Play now</p></span></button>
+                        <p class="muted">with players online</p>
+                      </div>
+                    </div>
+                    <div id="lobby-host" class="players">
+                      <form id="lobby-form" class="url-row" autocomplete="off">
+                        <label class="input-wrap">
+                          <span class="proto">https://</span>
+                          <input id="lobby-url" spellcheck="false" placeholder="wikipedia.org" aria-label="Website to fight on" />
+                        </label>
+                        <button class="btn" type="submit"><span><img src="./_app/boltIcon-v9dmn2sh.svg" alt="" /><p>Start</p></span></button>
+                      </form>
+                      <div class="picks">
+                        <p>Try</p>
+                        <div class="pick-row">
+                          <button class="tag lobby-pick" type="button" data-url="demo"><span>Demo page</span></button>
+                          <button class="tag lobby-pick" type="button" data-url="en.wikipedia.org/wiki/Stick_figure"><span>Wikipedia</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="muted" id="lobby-wait">Waiting for the host to pick a website.</p>
+                    <p class="err" id="lobby-err"></p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="loading" class="screen hidden">
+                <div class="sfwin load-card">
+                  <div class="window-head"><p id="load-host"></p></div>
+                  <div class="sfwin-body" style="gap: 8px">
+                    <div class="load-row"><p id="load-msg"></p><p id="load-pct" class="muted">0%</p></div>
+                    <div class="load-bar"><i id="load-fill"></i></div>
+                  </div>
+                </div>
+              </section>
+
+              <div id="hud" class="hidden">
+                <div class="sfwin hud-tl vs-only">
+                  <div class="window-head"><p id="vs-site"></p></div>
+                  <div class="sfwin-body">
+                    <div class="meter-row"><p id="vs-kills">0 kills</p><p class="muted" id="vs-goal"></p></div>
+                    <div class="meter-row" id="vs-place-row"><p class="muted">Place</p><p id="vs-place"></p></div>
+                    <div class="meter-row"><p class="muted">Health</p><p id="vs-hp">100</p></div>
+                    <div class="meter hp" id="vs-hpmeter"><i id="vs-hpbar"></i></div>
+                  </div>
+                </div>
+                <div class="vs-feed vs-only" id="vs-feed"></div>
+                <div class="vs-center vs-only" id="vs-center"></div>
+                <div class="sfwin vs-board vs-only hidden" id="vs-board">
+                  <div class="window-head"><p id="vs-board-title">Score</p></div>
+                  <div class="sfwin-body"><div class="board" id="vs-board-rows"></div></div>
+                </div>
+                <div class="hud-progress sp-only" id="hud-progress" aria-label="Destroyed">
+                  <div class="meter"><b id="hud-meter-ghost"></b><i id="hud-meter"></i></div>
+                  <p id="hud-pct">0%</p>
+                </div>
+                <div class="wname" id="wname"><p></p></div>
+                <div class="hud-weapons" id="hud-weapons"></div>
+                <div class="sfwin hud-hint" id="hud-hint">
+                  <div class="sfwin-body">
+                    <div class="keys-row kb-only">
+                      <span><kbd>A</kbd><kbd>D</kbd><p>run</p></span>
+                      <span><img src="./_app/spaceBarIcon-3zzb4qy0.svg" alt="Space" /><p>jump - tap to flip - hold to fly</p></span>
+                      <span><kbd>S</kbd><p>drop</p></span>
+                      <span><img src="./_app/mouseLeftIcon-47ae7rmd.svg" alt="Left click" /><p>shoot</p></span>
+                      <span><img src="./_app/mouseRightIcon-spccm0mv.svg" alt="Right click" /><p>grenade</p></span>
+                      <span><kbd>1-0</kbd><p>weapons</p></span>
+                      <span class="esc-key"><img src="./_app/escIcon-ep4tszws.svg" alt="Esc" /><p>pause</p></span>
+                      <span class="esc-leave"><img src="./_app/escIcon-ep4tszws.svg" alt="Esc" /><p>leave</p></span>
+                      <span class="vs-only"><kbd>Tab</kbd><p>score</p></span>
+                    </div>
+                    <div class="keys-row touch-only">
+                      <span><p>Left thumb, bottom left: run - push up to jump, hold to fly - down to drop</p></span>
+                      <span><p>Touch the page: aim and shoot</p></span>
+                    </div>
+                  </div>
+                </div>
+                                <div class="tstick touch-only" id="tstick"><i id="tknob"></i></div>
+                <button class="btn tbtn tbtn-alt touch-only" type="button" id="tbtn-alt" data-tap aria-label="Grenade"><p>Dive</p></button>
+                <button class="btn tbtn tbtn-pause touch-only" type="button" id="tbtn-pause" data-tap aria-label="Pause"><i></i><i></i></button>
+                <button class="btn tbtn tbtn-pause tbtn-leave touch-only" type="button" id="tbtn-leave" data-tap aria-label="Leave the match"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+              </div>
+
+                                          <section id="party" class="screen hidden">
+                <div class="sfwin party-card" id="party-card" data-tap>
+                  <div class="window-head">
+                    <p id="party-title"></p>
+                    <button type="button" data-act="leave" aria-label="Leave"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+                  </div>
+                  <div class="sfwin-body party-body">
+                    <div class="party-when">
+                      <div class="party-count" id="party-count"></div>
+                      <p class="party-status" id="party-status"></p>
+                      <div class="party-find hidden" id="party-find"><i></i></div>
+                      <p class="party-online" id="party-online"></p>
+                    </div>
+                    <div class="party-who">
+                      <p class="party-n" id="party-n"></p>
+                      <div class="party-players" id="party-players"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+                            <section id="leave-q" class="screen hidden">
+                <div class="sfwin leave-card" data-tap>
+                  <div class="window-head"><p>Leave this match?</p></div>
+                  <div class="sfwin-body">
+                    <div class="leave-body">
+                      <button class="btn" type="button" id="leave-yes"><span><p>Leave</p></span></button>
+                      <button class="btn" type="button" id="leave-no"><span><p>Keep playing</p></span></button>
+                    </div>
+                    <div class="leave-sound">
+                      <p class="gray">Sound</p>
+                      <input class="sfx-vol" type="range" min="0" max="1" step="0.05" value="1" aria-label="Sound volume" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id="pause" class="screen overlay hidden">
+                <div class="sfwin menu-card">
+                  <div class="window-head">
+                    <p>Paused - <span id="pause-site"></span></p>
+                    <button type="button" data-act="resume" aria-label="Resume"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+                  </div>
+                  <div class="sfwin-body">
+                    <div class="row">
+                      <button class="btn" type="button" data-act="resume"><span><p>Resume</p></span></button>
+                      <button class="btn sp-only" type="button" data-act="restart"><span><p>Restart site</p></span></button>
+                      <button class="btn sp-only" type="button" data-act="new"><span><p>New website</p></span></button>
+                      <button class="btn vs-only" type="button" data-act="leave"><span><p>Leave room</p></span></button>
+                    </div>
+                    <p class="muted vs-only">The match goes on while this menu is open.</p>
+                    <div class="inner board vs-only" id="pause-board"></div>
+                    <div class="pack-promo" hidden>
+                      <p class="gray pack-promo-name">Halloween Skin Pack</p>
+                      <div class="inner pack-promo-body"><div class="pack-promo-skins"></div><div class="pack-promo-buy"></div></div>
+                    </div>
+                    <div class="made-on pack-alt">
+                      <p class="gray">Made on <a href="https://www.spritefusion.com/pixel-art-generator" data-link="made on" target="_blank" rel="noopener noreferrer">Sprite Fusion</a></p>
+                      <div class="inner art-strip"></div>
+                    </div>
+                    <div>
+                      <p class="gray">Background</p>
+                      <div class="seg bg-seg"></div>
+                    </div>
+                    <div>
+                      <p class="gray">Sound</p>
+                      <input class="sfx-vol" type="range" min="0" max="1" step="0.05" value="1" aria-label="Sound volume" />
+                    </div>
+                    <div class="inner keys kb-only">
+                      <p>A D / arrows</p><p>run</p>
+                      <p>Space / W</p><p>jump - tap again to flip - hold to fly</p>
+                      <p>S</p><p>drop through - hold to fall through</p>
+                      <p>Mouse</p><p>aim, click to shoot</p>
+                      <p>Right click</p><p>throw a grenade</p>
+                      <p>1-0 / wheel</p><p>switch weapon</p>
+                    </div>
+                    <div class="inner keys touch-only">
+                      <p>Left thumb, bottom left</p><p>run - push up to jump, again to flip, hold to fly - pull down to drop</p>
+                      <p>Touch the page</p><p>aim and shoot - hold to keep firing</p>
+                      <p>Grenade button</p><p>throw a grenade - dive-bomb with the drone</p>
+                      <p>Weapons</p><p>tap one to switch</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id="complete" class="screen overlay hidden">
+                <div class="sfwin menu-card">
+                  <div class="window-head">
+                    <p>Website destroyed</p>
+                    <button type="button" data-act="keep" aria-label="Keep destroying"><img src="./_app/closeIcon-cwde2hjm.svg" alt="" /></button>
+                  </div>
+                  <div class="sfwin-body">
+                    <div class="big-score">100%</div>
+                    <p class="muted" id="done-site"></p>
+                    <div class="inner stats" id="done-stats"></div>
+                    <div class="pack-promo" hidden>
+                      <p class="gray pack-promo-name">Halloween Skin Pack</p>
+                      <div class="inner pack-promo-body"><div class="pack-promo-skins"></div><div class="pack-promo-buy"></div></div>
+                    </div>
+                    <div class="made-on pack-alt">
+                      <p class="gray">Made on <a href="https://www.spritefusion.com/pixel-art-generator" data-link="made on" target="_blank" rel="noopener noreferrer">Sprite Fusion</a></p>
+                      <div class="inner art-strip"></div>
+                    </div>
+                    <div class="row">
+                      <button class="btn" type="button" data-act="keep"><span><p>Keep destroying</p></span></button>
+                      <button class="btn" type="button" data-act="new"><span><img src="./_app/boltIcon-v9dmn2sh.svg" alt="" /><p>Destroy another</p></span></button>
+                    </div>
+                    <div class="row"><button class="btn" type="button" data-act="online"><span><p>Play online</p></span></button></div>
+                    <div class="pick-row">
+                      <button class="tag embed-open" type="button"><span>Embed to your website</span></button>
+                      <a class="more-link" data-link="make your game" href="https://www.spritefusion.com/pixel-art-generator" target="_blank" rel="noopener noreferrer"><p>Make your game with Sprite Fusion</p></a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="vs-over" class="screen overlay hidden">
+                <div class="sfwin menu-card">
+                  <div class="window-head"><p>Match over - <span id="vs-over-site"></span></p></div>
+                  <div class="sfwin-body">
+                    <div class="big-score" id="vs-winner"></div>
+                    <div class="inner board" id="vs-over-rows"></div>
+                    <div class="row" id="vs-over-host">
+                      <button class="btn" type="button" data-act="rematch"><span><p>Rematch</p></span></button>
+                      <button class="btn" type="button" data-act="vs-new"><span><img src="./_app/boltIcon-v9dmn2sh.svg" alt="" /><p>New website</p></span></button>
+                    </div>
+                    <p class="muted" id="vs-over-wait">Waiting for the host to start the next match.</p>
+                    <div class="row" id="vs-over-room"><button class="btn" type="button" data-act="leave"><span><p>Leave room</p></span></button></div>
+                                        <div class="row" id="vs-over-pub">
+                      <button class="btn" type="button" data-act="again"><span><img src="./_app/boltIcon-v9dmn2sh.svg" alt="" /><p>Play again</p></span></button>
+                      <button class="btn" type="button" data-act="leave"><span><p>Leave</p></span></button>
+                    </div>
+                                        <div class="over-settings pack-alt">
+                      <div class="over-sound">
+                        <p class="gray">Sound</p>
+                        <input class="sfx-vol" type="range" min="0" max="1" step="0.05" value="1" aria-label="Sound volume" />
+                      </div>
+                      <div>
+                        <p class="gray">Background</p>
+                        <div class="seg bg-seg"></div>
+                      </div>
+                    </div>
+                    <div class="pack-promo" hidden>
+                      <p class="gray pack-promo-name">Halloween Skin Pack</p>
+                      <div class="inner pack-promo-body"><div class="pack-promo-skins"></div><div class="pack-promo-buy"></div></div>
+                    </div>
+                    <div class="made-on pack-alt"><p class="gray">Made on <a href="https://www.spritefusion.com/pixel-art-generator" data-link="made on" target="_blank" rel="noopener noreferrer">Sprite Fusion</a></p></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="rotate" id="rotate">
+      <img src="./_app/monitorIcon-tkqvd2hx.svg" alt="" width="48" height="48" />
+      <p id="rotate-msg">Turn your phone sideways to play</p>
+    </div>
+    
+  
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(() => {});
+    });
+  }
+</script>
+
+  </body>
+</html>
