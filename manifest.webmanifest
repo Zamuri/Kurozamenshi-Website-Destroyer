@@ -1,10 +1,12 @@
 {
   "name": "Kurozamenshi Website Destroyer",
-  "short_name": "Kurozamenshi Destroyer",
+  "short_name": "Kuro Destroyer",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#272727",
-  "description": "Kurozamenshi offline edition of a browser destruction game."
+  "icons": [
+    {"src":"./assets/site/favicon.png","sizes":"96x96","type":"image/png"},
+    {"src":"./assets/site/apple-touch-icon.png","sizes":"180x180","type":"image/png"}
+  ]
 }
